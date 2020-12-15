@@ -1,0 +1,94 @@
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #61b8ff;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  background: #0771a1;
+}
+
+nav li {
+  padding: 10px;
+  display: block;
+  margin: 0px;
+  position: relative;
+}
+
+nav li:hover, nav li:focus-within {
+  background: #12bcff;
+}
+
+nav li:hover > ul, nav li:focus-within > ul {
+  display: initial;
+}
+
+nav li ul {
+  display: none;
+  position: absolute;
+  left: 0px;
+  min-width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  top: 100%;
+}
+
+nav li ul > li:hover > ul,
+nav li ul li:focus-within > ul {
+  left: 100%;
+  position: absolute;
+  top: 0px;
+}
+
+nav > ul {
+  background: #0056c7;
+  position: absolute;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+nav > ul > li {
+  display: inline;
+  position: relative;
+  left: 0px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+nav > ul > li:hover, nav > ul > li:focus-within {
+  background: #0095da;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-family: helvetica;
+  font-weight: 500;
+}
+/*# sourceMappingURL=tyyli.css.map */

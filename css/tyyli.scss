@@ -1,0 +1,85 @@
+*, *::before ,*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(97, 184, 255);
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    background: rgb(7, 113, 161);
+  }
+
+  li {
+    padding: 10px;
+    display: block;
+    margin: 0px;
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+      background: rgb(18, 188, 255);
+
+      > ul {
+        display: initial;
+      }
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      left: 0px;
+      min-width: 100%;
+      width: max-content;
+      max-width: 300px;
+      top: 100%;
+
+      > li:hover > ul,
+      li:focus-within > ul {
+        left: 100%;
+        position: absolute;
+        top: 0px;
+      }
+    }
+  }
+
+  > ul {
+    background: rgb(0, 86, 199);
+    position: absolute;
+    width: 500px;
+    display: flex;
+    text-align: center;
+
+    > li {
+      display: inline;
+      position: relative;
+      left: 0px;
+      width: max-content;
+      flex-grow: 1;
+
+      &:hover,
+      &:focus-within {
+        background: rgb(0, 149, 218);
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: helvetica;
+    font-weight: 500;
+  }
+}

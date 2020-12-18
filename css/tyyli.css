@@ -12,35 +12,44 @@ body {
   background: #61b8ff;
 }
 
-nav {
+.nav1 {
   width: 100%;
+  height: 42px;
+  background: #0056c7;
   position: absolute;
   top: 0px;
   left: 0px;
 }
 
-nav ul {
+.nav1 ul {
   margin: 0;
   padding: 0;
-  background: #0771a1;
+  background: #4c98fd;
+  -webkit-transition: .2s background;
+  transition: .2s background;
 }
 
-nav li {
-  padding: 10px;
+.nav1 li {
   display: block;
   margin: 0px;
   position: relative;
+  -webkit-transition: .05s background ease-in-out;
+  transition: .05s background ease-in-out;
 }
 
-nav li:hover, nav li:focus-within {
-  background: #12bcff;
+.nav1 li:target, .nav1 li:focus-within {
+  background: #4384db;
 }
 
-nav li:hover > ul, nav li:focus-within > ul {
+.nav1 li:target > ul, .nav1 li:focus-within > ul {
   display: initial;
 }
 
-nav li ul {
+.nav1 li li:hover {
+  background: #4384db;
+}
+
+.nav1 li ul {
   display: none;
   position: absolute;
   left: 0px;
@@ -52,14 +61,13 @@ nav li ul {
   top: 100%;
 }
 
-nav li ul > li:hover > ul,
-nav li ul li:focus-within > ul {
+.nav1 li ul > li:target > ul, .nav1 li ul li:focus-within > ul {
   left: 100%;
   position: absolute;
   top: 0px;
 }
 
-nav > ul {
+.nav1 > ul {
   background: #0056c7;
   position: absolute;
   width: 500px;
@@ -69,7 +77,7 @@ nav > ul {
   text-align: center;
 }
 
-nav > ul > li {
+.nav1 > ul > li {
   display: inline;
   position: relative;
   left: 0px;
@@ -79,16 +87,72 @@ nav > ul > li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -webkit-transition: .2s background;
+  transition: .2s background;
 }
 
-nav > ul > li:hover, nav > ul > li:focus-within {
-  background: #0095da;
+.nav1 > ul > li:hover {
+  background: #006eff;
 }
 
-nav a {
+.nav1 > ul > li:target, .nav1 > ul > li:focus-within {
+  background: #1d7fff;
+}
+
+.nav1 > ul > li ul {
+  -webkit-box-shadow: 0 0 0px 2px white;
+          box-shadow: 0 0 0px 2px white;
+  z-index: -1;
+}
+
+.nav1 > ul > li li {
+  background: #4c98fd;
+}
+
+.nav1 > ul > li li:not(:first-child) {
+  -webkit-box-shadow: 0 -15px 0 -14px #00000045;
+          box-shadow: 0 -15px 0 -14px #00000045;
+}
+
+.nav1 a {
+  position: relative;
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   font-family: helvetica;
   font-weight: 500;
+  font-size: 1.2em;
+  width: 100%;
+  display: block;
+  height: 100%;
+  padding: 10px;
+  text-align: left;
+}
+
+.nav1 .right {
+  padding-right: 30px;
+}
+
+.nav1 .left {
+  padding-left: 30px;
+}
+
+.nav1 .right::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  border-left: 14px solid #6dacff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  right: 5px;
+}
+
+.nav1 .left::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  border-right: 14px solid #6dacff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  left: 5px;
 }
 /*# sourceMappingURL=tyyli.css.map */

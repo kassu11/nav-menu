@@ -10,8 +10,10 @@ body {
   background: rgb(97, 184, 255);
 }
 
-nav {
+.nav1 {
   width: 100%;
+  height: 42px;
+  background: #0056c7;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -19,22 +21,26 @@ nav {
   ul {
     margin: 0;
     padding: 0;
-    background: rgb(7, 113, 161);
+    background: #4c98fd;
+    transition: .2s background;
   }
 
   li {
-    padding: 10px;
     display: block;
     margin: 0px;
     position: relative;
+    transition: .05s background ease-in-out;
 
-    &:hover,
-    &:focus-within {
-      background: rgb(18, 188, 255);
+    &:target, &:focus-within {
+      background: #4384db;
 
       > ul {
         display: initial;
       }
+    }
+
+    li:hover {
+      background: #4384db;
     }
 
     ul {
@@ -46,8 +52,7 @@ nav {
       max-width: 300px;
       top: 100%;
 
-      > li:hover > ul,
-      li:focus-within > ul {
+      > li:target > ul, li:focus-within > ul {
         left: 100%;
         position: absolute;
         top: 0px;
@@ -68,18 +73,67 @@ nav {
       left: 0px;
       width: max-content;
       flex-grow: 1;
+      transition: .2s background;
+      
+      &:hover {
+        background: #006eff;
+      }
 
-      &:hover,
-      &:focus-within {
-        background: rgb(0, 149, 218);
+      &:target, &:focus-within {
+        background: #1d7fff;
+      }
+
+      ul {
+        box-shadow: 0 0 0px 2px white;
+        z-index: -1;
+      }
+
+      li {
+        background: #4c98fd;
+
+        &:not(:first-child) {
+          box-shadow: 0 -15px 0 -14px #00000045;
+        }
       }
     }
   }
 
   a {
+    position: relative;
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, .9);
     font-family: helvetica;
     font-weight: 500;
+    font-size: 1.2em;
+    width: 100%;
+    display: block;
+    height: 100%;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .right {
+    padding-right: 30px;
+  }
+  .left {
+    padding-left: 30px;
+  }
+  .right::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    border-left: 14px solid #6dacff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: 5px;
+  }
+  .left::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    border-right: 14px solid #6dacff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    left: 5px;
   }
 }
